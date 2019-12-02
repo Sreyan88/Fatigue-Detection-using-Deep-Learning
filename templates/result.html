@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',     filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',     filename='css/bootstrap.css') }}">
+</head>
+
+<body>
+    <div class="bg-info" align="center">
+        <h1>Results</h1>
+    </div>
+    <div align="center">
+        <h3 class="text-danger">Right Eye: {{right_eyep}}</h3>
+        <h3 class="text-danger"> Left Eye: {{left_eyep}}</h3>
+        <h3 class="text-danger"> Nose: {{nosep}}</h3>
+        <h3 class="text-danger"> Mouth: {{mouthp}}</h3>
+        <h3 class="text-danger"> Undereye Left: {{undereye1p}}</h3>
+        <h3 class="text-danger"> Undereye Right: {{undereye2p}}</h3>
+        <h3 class="text-danger"> Skin: {{facep}}</h3>
+        <h3 class="text-danger"> Final Prediction: {{final}}</h3>
+        <img src="{{ url_for('static',     filename=user_image) }}" width="300" height="300" />
+    </div>
+</body>
+
+</html>

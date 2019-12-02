@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fatigue Detection</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+    <!-- CSS style to put div side by side -->
+    <style type="text/css">
+        .container {
+            width: 600px;
+            height: 190px;
+            background-color: #000000;
+            padding-top: 20px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        #st-box {
+            float: left;
+            width: 180px;
+            height: 180px;
+            background-color: #4d4d4d;
+            border: solid black;
+        }
+        
+        #nd-box {
+            float: left;
+            width: 180px;
+            height: 180px;
+            background-color: #4d4d4d;
+            border: solid black;
+            margin-left: 20px;
+        }
+        
+        #rd-box {
+            float: right;
+            width: 180px;
+            height: 180px;
+            background-color: #4d4d4d;
+            border: solid black;
+        }
+        
+        h1 {
+            color: black;
+        }
+    </style>
+</head>
+
+<body background="{{ url_for('static',     filename='back3.jpg') }}">
+
+    <div align="center" class="bg-info">
+        <div class="bor" style="background-color: #000000; margin-left: -1px; ">
+            <h1 style="font-size: 2.4rem; text-align: center; font-family: 'Montserrat';color:#4d4d4d;border-bottom: 2px solid #4d4d4d;"><b>Fatigue and Sleep Deprivation Detector</b></h1>
+        </div>
+        <div class="container" style="font-family: sans-serif;">
+            <div id="st-box">
+                <b><h2 style="color: #000000;font-family: 'Montserrat';">Step-1</h2></b>
+                <p style="color: #000000; font-family: 'Montserrat';">
+                    <b> Get the image or the face that you want to analyze.</b>
+                </p>
+            </div>
+
+            <div id="nd-box">
+                <h2 style="color: #000000;font-family: 'Montserrat';">Step-2</h2>
+                <p style="color: #000000; font-family: 'Montserrat';">
+                    <b> Feed the captured image onto the deep-learning model to gain insights.</b>
+                </p>
+            </div>
+
+            <div id="rd-box">
+                <h2 style="color: #000000;font-family: 'Montserrat';">Step-3</h2>
+                <p style="color: #000000; font-family: 'Montserrat';">
+                    <b>Get the results with customized personal suggestions for improving your lifestyle.</b>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="big">
+        <img id="fupld" src="#" alt="Uploaded file" width="250px" height="250px" style=' position: relative; left: 380px; width:350px;height: 250px;border: 1px solid white;' />
+        <form action="{{ url_for('apicall') }}" method="POST" enctype="multipart/form-data">
+            <h3 align="center">Enter Your Image Here</h3>
+            <input type="file" name="pic" id="pic" accept="image/*" onchange="readURL(this); " style=" position: relative; left: 380px;">
+            <br>
+            <input type="submit" name="" value="Predict" class="btn btn-info" style=" position: absolute; left: 800px; top:400px; background-color: #4d4d4d;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font-family: 'Montserrat';">
+        </form>
+    </div>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#fupld')
+                        .attr('src', e.target.result)
+                        .width(300)
+                        .height(300);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

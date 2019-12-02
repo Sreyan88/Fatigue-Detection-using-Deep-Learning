@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Result</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">
+        .containert {
+            padding: 2rem 0rem;
+        }
+        
+        .table-image {
+            td,
+            th {
+                vertical-align: middle;
+            }
+        }
+    </style>
+</head>
+
+<body background="{{ url_for('static',     filename='back3.jpg') }}">
+    <div class="container" align="center" style="background-color: #999999; font-family: 'Montserrat'; color: black;">
+        <h1>Results</h1>
+    </div>
+    <div>
+        {% if final > 0.6 %}
+        <div class="container">
+            <div class="alert alert-warning alert-dismissible" role="alert" style="background-color: #4d4d4d; font-family: 'Montserrat'; color: black;">
+                <div align="center">
+                    <h1><strong> Healthy Sleeper !!!!!</strong></h1>
+                    <h1>Kudos amigo.........You are well rested and raring to go<small></small></h1>
+                </div>
+                <div class="jumbotron">
+                    <h3>Benefits:</h3>
+                    <ul>
+                        <li>
+                            <h4>Sleep Keeps Your Heart Healthy</h4>
+                            <li>
+                                <h4>Sleep May Help Prevent Cancer</h4>
+                                <li>
+                                    <h4>Sleep Reduces Stress</h4>
+                                    <li>
+                                        <h4>Sleep Makes You More Alert</h4>
+                                        <li>
+                                            <h4>Sleep May Help You Lose Weight</h4>
+                                            <li>
+                                                <h4>Sleep May Reduce Your Risk of Depression</h4>
+                                                <li>
+                                                    <h4>Napping Makes You Smarter</h4>
+                    </ul>
+                    <h3>Titbits:</h3>
+                    <ul>
+                        <li>
+                            <h4 id="sleep1"></h4>
+                            <li>
+                                <h4 id="diet1"></h4>
+                                <li>
+                                    <h4 id="exc1"></h4>
+
+                    </ul>
+
+                    <script>
+                        var z;
+                        var textArray = [
+                            'Humans spend 1/3 of their life sleeping',
+                            'The record for the longest period without sleep is 11 days',
+                            ' It’s not uncommon for deaf people to use sign language in their sleep',
+                            'Dysania is the state of finding it hard to get out of bed in the morning',
+                            'Parasomnia is a term that refers to unnatural movements during your sleep',
+                            ' It’s thought that up to 15% of the population are sleepwalkers',
+                            ' 1 in 4 married couples sleep in separate beds',
+                            'Sleep deprivation will kill you more quickly than food deprivation',
+                            'Within 5 minutes of waking up, 50% of your dream is forgotten',
+                            'Pain tolerance is reduced by sleep deprivation',
+                            '41% of the British population sleep in the foetal position',
+                            ' Sleep experts have discovered a direct link between people’s favourite sleeping positions and their personalities',
+                            ' Ideally, falling asleep at night should take you 10-15 minutes',
+                            ' Humans are the only mammals that willingly delay sleep',
+                            'High earners (£65 – £75,000) get the best sleep'
+                        ];
+                        var randomNumber = Math.floor(Math.random() * textArray.length);
+                        if (randomNumber == 0) {
+                            document.getElementById("sleep1").innerHTML = ("12% of people dream entirely in black and white");
+                            document.getElementById("diet1").innerHTML = ("Two thirds of a cat’s life is spent asleep");
+                            document.getElementById("exc1").innerHTML = (" A giraffe only needs 1.9 hours of sleep a day, whereas a brown bat needs 19.9 hours a day ");
+                        } else if (randomNumber > 12) {
+                            z = textArray[randomNumber];
+                            var i = textArray[randomNumber - 3];
+                            var j = textArray[randomNumber - 6];
+                            document.getElementById("sleep1").innerHTML = z;
+                            document.getElementById("diet1").innerHTML = i;
+                            document.getElementById("exc1").innerHTML = j;
+                        } else if (randomNumber <= 12) {
+                            z = textArray[randomNumber];
+                            var i = textArray[randomNumber + 1];
+                            var j = textArray[randomNumber + 2];
+                            document.getElementById("sleep1").innerHTML = z;
+                            document.getElementById("diet1").innerHTML = i;
+                            document.getElementById("exc1").innerHTML = j;
+                        }
+                    </script>
+
+
+                </div>
+                <div align="center">
+                    <h1><strong>Your Overall Prediction is : </strong> <code>{{final}}</code></h1>
+                    <img src="{{ url_for('static',     filename=user_image) }}" alt="User Image" width="500" height="500">
+                </div>
+            </div>
+
+        </div>
+        {% else %}
+        <div class="container">
+            <div class="alert alert-warning alert-dismissible" role="alert" style="background-color: #4d4d4d; font-family: 'Montserrat'; color: black;">
+                <div align="center">
+                    <h1><strong>Deprived !!!!!</strong></h1>
+                    <h1>Hey.... You need to get some sleep!!!!!</h1>
+                </div>
+                <div class="jumbotron">
+                    <h3>Effects:</h3>
+                    <ul>
+                        <li>
+                            <h4>Impairs cognitive abilities like attention, concentration, reasoning etc.</h4>
+                            <li>
+                                <h4>Leads to cardiac diseases, skin disorders as well as increased blood pressures.</h4>
+                                <li>
+                                    <h4>Makes your immunity system weak.</h4>
+                    </ul>
+                    <h3>Tips:</h3>
+                    <ul>
+                        <li>
+                            <h4 id="sleep"></h4>
+                            <script>
+                                var x;
+                                x = Math.floor((Math.random() * 5) + 3);
+                                document.getElementById("sleep").innerHTML = ("Additional sleep time required is " + x + " hours...");
+                            </script>
+                            <li>
+                                <h4 id="diet"></h4>
+                                <script>
+                                    var z;
+                                    var textArray = [
+                                        'Have lots of dairy products like milk, cheese, yogurt etc.',
+                                        'You my friend need an extensive protein rich food like chicken, eggs, turkey etc. avoiding fats',
+                                        'You primarily need an intake of citrous fruits. Oranges, grapes etc. would be a good fit',
+                                        'Primarily focus on vegetables...the protein intake is pretty good',
+                                        'Try avoiding spicy food and alcohol consumption ...Food involving calcium and magnesium would work wonders ',
+                                        'Have proper breakfast including cereals, spinach and a protein....milk is a must',
+                                        'Cut back on coffee and replace with green tea',
+                                        'For you carbohydrates is good but in a limited amount....May have a bowl of rice for dinner',
+                                        'Fresh fruits are excellent energy boosters',
+                                        'You need an increased intake proteins and Vitamin D....go for seafood'
+                                    ];
+                                    var randomNumber = Math.floor(Math.random() * textArray.length);
+                                    if (randomNumber == 0) {
+                                        document.getElementById("diet").innerHTML = ("Your diet plan can improve..have lots of water ... avoid heavy food during bedtime and say no to spicy food   ");
+                                    } else {
+                                        z = textArray[randomNumber];
+                                        document.getElementById("diet").innerHTML = ("Your diet plan can improve..    " + z);
+                                    }
+                                </script>
+                                <li>
+                                    <h4 id="exc"></h4>
+                                    <script>
+                                        var y;
+                                        y = Math.floor((Math.random() * 3) + 1);
+                                        document.getElementById("exc").innerHTML = ("Daily excercises (in hours):  " + y);
+                                    </script>
+                    </ul>
+
+                </div>
+                <div align="center">
+                    <h1><strong>Your Overall Prediction is : </strong> <code>{{final}}</code></h1>
+                    <img src="{{ url_for('static',     filename=user_image) }}" alt="User Image" width="500" height="500">
+                </div>
+            </div>
+
+        </div>
+        {% endif %}
+        <div class="container" align="center" style="background-color: #999999; font-family: 'Montserrat'; color: black;">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-image">
+                        <thead>
+                            <tr align="center">
+                                <th scope="col" style="font-size: 40px; align-content: center;">Image</th>
+                                <h3>
+                                    <th scope="col" style="font-size: 40px">Name</th>
+                                </h3>
+                                <th scope="col" style="font-size: 40px">Prediction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="w-25">
+                                    <img src="{{ url_for('static',     filename=left_eye_imgp) }}" alt="Left Eye" height="75" width="75">
+                                    <td style="font-size: 30px">Left Eye</td>
+                                    <td style="font-size: 30px">{{left_eyep}}</td>
+
+                            </tr>
+                            <tr>
+
+                                <td class="w-25">
+                                    <img src="{{ url_for('static',     filename=right_eye_imgp) }}" alt="Right Eye" height="75" width="75">
+                                </td>
+                                <td style="font-size: 30px">Right Eye</td>
+                                <td style="font-size: 30px">{{right_eyep}}</td>
+
+                            </tr>
+                            <tr>
+                                <td class="w-25">
+                                    <img src="{{ url_for('static',     filename=left_undereye_imgp) }}" alt="Left Undereye" height="75" width="75">
+                                </td>
+                                <td style="font-size: 30px">Left Undereye</td>
+                                <td style="font-size: 30px">{{undereye1p}}</td>
+
+                            </tr>
+                            <tr>
+                                <td class="w-25">
+                                    <img src="{{ url_for('static',     filename=right_undereye_imgp) }}" alt="Right Undereye" height="75" width="75">
+                                </td>
+                                <td style="font-size: 30px">Right Undereye</td>
+                                <td style="font-size: 30px">{{undereye2p}}</td>
+
+                            </tr>
+                            <tr>
+                                <td class="w-25">
+                                    <img src="{{ url_for('static',     filename=nose_imgp) }}" alt="Nose" height="75" width="75">
+                                </td>
+                                <td style="font-size: 30px">Nose</td>
+                                <td style="font-size: 30px">{{nosep}}</td>
+
+                            </tr>
+                            <tr>
+                                <td class="w-25">
+                                    <img src="{{ url_for('static',     filename=mouth_imgp) }}" alt="Mouth" height="75" width="75">
+                                </td>
+                                <td style="font-size: 30px">Mouth</td>
+                                <td style="font-size: 30px">{{mouthp}}</td>
+
+                            </tr>
+                            <tr>
+                                <td class="w-25">
+                                    <img src="{{ url_for('static',     filename=face_imgp) }}" alt="Skin" height="75" width="75">
+                                </td>
+                                <td style="font-size: 30px">Skin</td>
+                                <td style="font-size: 30px">{{facep}}</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>
