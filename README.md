@@ -90,5 +90,9 @@ Copy the url right after Running on and paste it in your browser.
 <p align="center"> Actual score given to each individual facial landmark
 <img src="https://user-images.githubusercontent.com/33536225/84592167-3146b680-ae61-11ea-96fe-1d66b4b57595.png" height="400" >
 </p>
-
+<p>This project could not have been completed without my teammates. They are:
+  <ol>
+    <li><a href="https://www.linkedin.com/in/sreyan-ghosh/">Sreyan Ghosh</a></li>
+    <li><a href="https://www.linkedin.com/in/sherwinjosephsunny/">Sherwin Joseph<a/></li>
+    <li><a href="https://www.linkedin.com/in/rohan-roney-a652a515a/">Rohan Roney</a></li>
 </ol>
