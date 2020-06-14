@@ -5,3 +5,4 @@ This folder contains all the CNN models trained on the EfficientNet architecture
 <li>Mouth</li>
 <li>Nose</li>
 <li>Undereyes</li>
+The link to the google drive which contains the models can be found <a href="https://drive.google.com/drive/folders/1ipHJg87CagF8iB2t0NI-4mIPaBtdQJ8N?usp=sharing">here</a>.
