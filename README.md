@@ -97,3 +97,6 @@ Copy the url right after Running on and paste it in your browser.
     <li><a href="https://www.linkedin.com/in/rohan-roney-a652a515a/">Rohan Roney</a></li>
     <li><a href="https://www.linkedin.com/in/samden-lepcha/">Samden Lepcha</a></li>
 </ol>
+<p align="center"> A picture of us at the award ceremony
+<img src="https://user-images.githubusercontent.com/33536225/84734659-1ee28f00-afbf-11ea-9d86-dc0cbcfe6f86.png" height="400" >
+</p>
