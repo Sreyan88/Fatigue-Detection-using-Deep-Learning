@@ -1,3 +1,5 @@
+<a href="https://doi.org/10.5281/zenodo.3902276"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.3902276.svg" alt="DOI"></a>
+
 # Fatigue Detection using Deep Learning
 
 This repository contains a project based on the research to detect fatigue levels of a person through a photograph. For this project the main facial cues used to detect fatigue levels are: Undereyes, Eyes, Mouth, Nose and Skin.
@@ -22,8 +24,8 @@ The architecture for this project is shown in the picture below. The image of a 
 ### Setup Instructions
 
 <li>Clone the entire repository into your local machine.</li>
-<li>Download contents of object_detecion folder from zenodo and place it in the folder.</li>
-<li>Download models from zenodo and place it in models/image_classification.</li>
+<li>Download contents of <a href="https://zenodo.org/api/files/fc89114d-f49d-42b1-a277-2a2b08bf4ea9/object_detection_folder.zip">object_detection </a> folder from zenodo and place all the contents in the folder.</li>
+<li>Download the <a href="https://zenodo.org/api/files/fc89114d-f49d-42b1-a277-2a2b08bf4ea9/image_classification_models.zip"> models </a> from zenodo and place all the contents in models/image_classification.</li>
 
 
 <ol>
@@ -102,4 +104,10 @@ This aggregation has been done through basic intuitive hypothesis. Please feel f
 <p> You can follow this <a href="https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10" >link</a> for an excellent tutorial to make train your own custom object detection model. Our under-eye object detection as heavily based on this.</p>
 <p> You can follow this <a href="https://www.pyimagesearch.com/2017/04/10/detect-eyes-nose-lips-jaw-dlib-opencv-python/" >link</a> from pyimagesearch for facial part extraction using dlib. Our facial part extraction is heavily based on this.</p>
 
+### Data:
+<p> You can download the data used for the project from <a href="https://zenodo.org/api/files/fc89114d-f49d-42b1-a277-2a2b08bf4ea9/dataset.zip">here</a>. </p>
+
+
+
+P.S. - If you happen to use any of our code or data for your experiment you can cite our work/data using the zenodo. Just click on the zenodo badge above and you will be redirected to zenodo where you can find how to cite our work.
 
