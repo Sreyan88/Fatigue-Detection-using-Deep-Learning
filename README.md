@@ -69,7 +69,7 @@ Copy the url right after Running on and paste it in your browser.
 <img src="https://user-images.githubusercontent.com/33536225/84592167-3146b680-ae61-11ea-96fe-1d66b4b57595.png" height="400" >
 </p>
 
-## Note : The lower the score, the higher level of fatigue.
+### Note : The lower the score, the higher level of fatigue.
 
 Current aggregation used for final score:
   ```
@@ -83,10 +83,11 @@ This aggregation has been done through basic intuitive hypothesis. Please feel f
     <li><a href="https://www.linkedin.com/in/rohan-roney-a652a515a/">Rohan Roney</a></li>
     <li><a href="https://www.linkedin.com/in/samden-lepcha/">Samden Lepcha</a></li>
 </ol>
+
 # Extras:
 
 ### Credits:
-<p> You can follow this<a href="https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10" >link</a> for an excellent tutorial to make train your own custom object detection model. Our under-eye object detection as heavily based on this.</p>
-<p> You can follow this<a href="https://www.pyimagesearch.com/2017/04/10/detect-eyes-nose-lips-jaw-dlib-opencv-python/" >link</a> from pyimagesearch for facial part extraction using dlib. Our facial part extraction is heavily based on this.</p>
+<p> You can follow this <a href="https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10" >link</a> for an excellent tutorial to make train your own custom object detection model. Our under-eye object detection as heavily based on this.</p>
+<p> You can follow this <a href="https://www.pyimagesearch.com/2017/04/10/detect-eyes-nose-lips-jaw-dlib-opencv-python/" >link</a> from pyimagesearch for facial part extraction using dlib. Our facial part extraction is heavily based on this.</p>
 
 
