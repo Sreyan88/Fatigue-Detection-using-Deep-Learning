@@ -46,29 +46,29 @@ The architecture for this project is shown in the picture below. The image of a 
   python app.py
   ```
 <p align="center"> After running the above command you should get a screen that looks like this.
-<img src="https://user-images.githubusercontent.com/33536225/84591789-db710f00-ae5e-11ea-99a5-a2460819c80c.png" height="100" >
+<img src="https://user-images.githubusercontent.com/33536225/84591789-db710f00-ae5e-11ea-99a5-a2460819c80c.png" height="200" >
 Copy the url right after Running on and paste it in your browser. 
 </p>
 
 <li> After running the python script and copying the link to the browser you should get this screen.</li><br>
 <p align="center"> This is the homepage of the project.
-<img src="https://user-images.githubusercontent.com/33536225/84591854-4ae6fe80-ae5f-11ea-9d95-6b4dd26b2b1f.png" height="250" >
+<img src="https://user-images.githubusercontent.com/33536225/84591854-4ae6fe80-ae5f-11ea-9d95-6b4dd26b2b1f.png" height="400" >
 </p>  
 <p> Here you can upload the image using the browse button and selecting the image to check the fatigue levels. Here we have selected an image and are ready to detect the fatigue levels. </p>
 <p align="center">
-<img src="https://user-images.githubusercontent.com/33536225/84592096-a1a10800-ae60-11ea-98bf-4492f90936bb.png" height="250" >
+<img src="https://user-images.githubusercontent.com/33536225/84592096-a1a10800-ae60-11ea-98bf-4492f90936bb.png" height="400" >
 </p>
 <p> After clicking on the predict button this is the result that is found. </p>
 <p align="center">Some information based on the results
-<img src="https://user-images.githubusercontent.com/33536225/84592141-f9d80a00-ae60-11ea-8ac6-d5b082657820.png" height="250" >
+<img src="https://user-images.githubusercontent.com/33536225/84592141-f9d80a00-ae60-11ea-8ac6-d5b082657820.png" height="400" >
 </p>
 <br>
 <p align="center"> Final score given to the image:
-<img src="https://user-images.githubusercontent.com/33536225/84592151-0fe5ca80-ae61-11ea-96bc-600a63c0023a.png" height="250" >
+<img src="https://user-images.githubusercontent.com/33536225/84592151-0fe5ca80-ae61-11ea-96bc-600a63c0023a.png" height="400" >
 </p>
 <br>
 <p align="center"> Actual score given to each individual facial landmark
-<img src="https://user-images.githubusercontent.com/33536225/84592167-3146b680-ae61-11ea-96fe-1d66b4b57595.png" height="250" >
+<img src="https://user-images.githubusercontent.com/33536225/84592167-3146b680-ae61-11ea-96fe-1d66b4b57595.png" height="400" >
 </p>
 
 ### Note : The lower the score, the higher level of fatigue.
