@@ -5,11 +5,14 @@ This repository contains a project based on the research to detect fatigue level
 ### Problem Statement
 The complexities of fatigue have drawn much attention from researchers across various disciplines. Short-term fatigue may cause safety issue while driving; thus, dynamic systems were designed to track driver fatigue. Longterm fatigue could lead to chronic syndromes, and eventually affect individuals physical and psychological health. Traditional methodologies of evaluating fatigue not only require sophisticated equipment but also consume enormous time.
 
+<img src="https://user-images.githubusercontent.com/33536225/85205309-42e3fe80-b338-11ea-9966-cf295f576aa3.png" height="200" >
+
 ### Our Proposal
 In this project, we attempt to develop a novel and efﬁcient method to predict individual’s fatigue rate by scrutinising human facial cues. Our goal is to predict fatigue rate based on a single photo. Our work represents a promising way to assess sleep-deprived fatigue, and our project will provide a viable and efﬁcient computational framework for user fatigue modelling in large-scale.
 
 ### Architecture
 The architecture for this project is shown in the picture below. The image of a face is taken as input and the facial landmarks are detected and cropped out. These cropped out facial landmarks such as eyes, undereyes, nose, mouth along with the entire face image for the skin is fed into individual models trained on these specific features. The individual models return a value which corresponds to the fatigue levels. These values are then taken as a weighted sum (where eyes and undereyes are given more weightage) which is used as the final value to determine the fatigue level of a person.
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/33536225/84591220-466c1700-ae5a-11ea-8c55-776a7c44c459.png" height="250" >
 </p>
@@ -46,23 +49,28 @@ The architecture for this project is shown in the picture below. The image of a 
   python app.py
   ```
 <p align="center"> After running the above command you should get a screen that looks like this.
+
 <img src="https://user-images.githubusercontent.com/33536225/84591789-db710f00-ae5e-11ea-99a5-a2460819c80c.png" height="200" >
 Copy the url right after Running on and paste it in your browser. 
 </p>
 
 <li> After running the python script and copying the link to the browser you should get this screen.</li><br>
+
 <p align="center"> This is the homepage of the project.
 <img src="https://user-images.githubusercontent.com/33536225/84591854-4ae6fe80-ae5f-11ea-9d95-6b4dd26b2b1f.png" height="400" >
 </p>  
 <p> Here you can upload the image using the browse button and selecting the image to check the fatigue levels. Here we have selected an image and are ready to detect the fatigue levels. </p>
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/33536225/84592096-a1a10800-ae60-11ea-98bf-4492f90936bb.png" height="400" >
 </p>
 <p> After clicking on the predict button this is the result that is found. </p>
+
 <p align="center">Some information based on the results
 <img src="https://user-images.githubusercontent.com/33536225/84592141-f9d80a00-ae60-11ea-8ac6-d5b082657820.png" height="400" >
 </p>
 <br>
+
 <p align="center"> Final score given to the image:
 <img src="https://user-images.githubusercontent.com/33536225/84592151-0fe5ca80-ae61-11ea-96bc-600a63c0023a.png" height="400" >
 </p>
