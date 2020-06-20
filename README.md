@@ -11,7 +11,7 @@ In this project, we attempt to develop a novel and efﬁcient method to predict 
 ### Architecture
 The architecture for this project is shown in the picture below. The image of a face is taken as input and the facial landmarks are detected and cropped out. These cropped out facial landmarks such as eyes, undereyes, nose, mouth along with the entire face image for the skin is fed into individual models trained on these specific features. The individual models return a value which corresponds to the fatigue levels. These values are then taken as a weighted sum (where eyes and undereyes are given more weightage) which is used as the final value to determine the fatigue level of a person.
 <p align="center">
-<img src="https://user-images.githubusercontent.com/33536225/84591220-466c1700-ae5a-11ea-8c55-776a7c44c459.png" height="400" >
+<img src="https://user-images.githubusercontent.com/33536225/84591220-466c1700-ae5a-11ea-8c55-776a7c44c459.png" height="250" >
 </p>
 
 ### Setup Instructions
