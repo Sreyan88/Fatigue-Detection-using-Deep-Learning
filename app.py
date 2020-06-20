@@ -1,3 +1,5 @@
+# Import important libraries
+
 from imutils import face_utils
 import numpy as np
 import imutils
@@ -25,16 +27,15 @@ import pandas as pd
 import pickle
 import skimage 
 from skimage import io 
-
-
 import json
+
 
 app = Flask(__name__)
 
-app.config['UPLOAD_FOLDER'] = 'C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/Image'
-MODEL_PATH = "C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/model"
+app.config['UPLOAD_FOLDER'] = './image'
+MODEL_PATH = "./models/image_classification"
 
-def load_model1():
+def load_models():
    global model_eye, model_nose, model_face, model_undereye, model_mouth
    model_eye = load_model(os.path.join(MODEL_PATH,"Eyes_4(75).h5"))
    model_nose = load_model(os.path.join(MODEL_PATH,"Nose(50).h5"))
@@ -46,37 +47,30 @@ def load_model1():
 
 @app.route('/')
 def home():
-
 	return render_template('home_final.html')
 
 @app.route('/predict', methods = ['POST'])
 def apicall():
-    
     if request.method == 'POST':
-        #if not 'pic' in request.files:
-        #    return jsonify({'error': 'no file'}), 400]
-        
-        path = 'C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/Image'
+        path = './image'
 
 
-        # initialize dlib's face detector (HOG-based) and then create
-        # the facial landmark predictor
+        # Initialize dlib's face detector (HOG-based) and then create
+        # The facial landmark predictor
         detector = dlib.get_frontal_face_detector()
-        predictor = dlib.shape_predictor("C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/shape_predictor_68_face_landmarks.dat")
-        #Image info
+        predictor = dlib.shape_predictor("./models/object_detection/shape_predictor_68_face_landmarks.dat")
+        # Image info
         img_file = request.files['pic']
         img_name = img_file.filename
-        #img_name = request.json['title']
         img_file.save(os.path.join(app.config['UPLOAD_FOLDER'], img_name))
         frame = cv2.imread(os.path.join(app.config['UPLOAD_FOLDER'], img_name))
         frame1 = frame
-        #cv2.imwrite(os.path.join(path1, img_name), frame)
         image = imutils.resize(frame, width=500)
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
         rects = detector(gray, 1)
 
-        # loop over the face detections
+        # Loop over the face detections
         for (i, rect) in enumerate(rects):
             shape = predictor(gray, rect)
             shape = face_utils.shape_to_np(shape)
@@ -93,17 +87,15 @@ def apicall():
                 (x, y, w, h) = cv2.boundingRect(np.array([shape[i:j]]))
                 roi = image[y:y + h, x:x + w]
                 roi = imutils.resize(roi, width=250, inter=cv2.INTER_CUBIC)
-                #j=np.random.randn()
                 if (name == "right_eye" or name == "left_eye" or name == "nose" or name == "mouth"):
                     cv2.imwrite(os.path.join(path , name + ".jpg"),roi)
 
-        PATH_TO_CKPT = "C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/object_detection/inference_graph/frozen_inference_graph.pb"
+        # Custom model for under eye object detection trained using yolov3 (Darknet implementation)
+
+        PATH_TO_CKPT = "./final/object_detection/inference_graph/frozen_inference_graph.pb"
 
         # Path to label map file 
-        PATH_TO_LABELS = "C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/object_detection/training/labelmap.pbtxt"
-
-        # Path to image
-        #PATH_TO_IMAGE = "/Users/sherwinjoseph/Desktop/Project/FatiqueDetection/object_detection/deprived1.jpg"
+        PATH_TO_LABELS = "./object_detection/training/labelmap.pbtxt"
 
         # Number of classes the object detector can identify
         NUM_CLASSES = 1
@@ -168,7 +160,6 @@ def apicall():
             line_thickness=4,
             min_score_thresh=0.60)
 
-        #AUDIO_PATH = "jolly_laugh.wav"
         
         # initialize the total number of frames that *consecutively* contain
         # santa along with threshold required to trigger the santa alarm
@@ -181,7 +172,7 @@ def apicall():
         
         frame = cv2.imread(os.path.join(path, "right_eye.jpg"))
         right_eye_img = "righteye" + img_name
-        cv2.imwrite(os.path.join("C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/static", right_eye_img), frame)
+        cv2.imwrite(os.path.join("./static", right_eye_img), frame)
         frame = imutils.resize(frame, width=400)
         # prepare the image to be classified by our deep learning network
         image = cv2.resize(frame, (75,75))
@@ -193,7 +184,7 @@ def apicall():
 
         frame = cv2.imread(os.path.join(path, "left_eye.jpg"))
         left_eye_img = "lefteye" + img_name
-        cv2.imwrite(os.path.join("C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/static", left_eye_img), frame)
+        cv2.imwrite(os.path.join("./static", left_eye_img), frame)
         frame = imutils.resize(frame, width=400)
         # prepare the image to be classified by our deep learning network
         image = cv2.resize(frame, (75,75))
@@ -208,9 +199,9 @@ def apicall():
         
         frame = cv2.imread(os.path.join(path, "nose.jpg"))
         nose_img = "nose" + img_name
-        cv2.imwrite(os.path.join("C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/static", nose_img), frame)
+        cv2.imwrite(os.path.join("./static", nose_img), frame)
         frame = imutils.resize(frame, width=400)
-        # prepare the image to be classified by our deep learning network
+        # Prepare the image to be classified by our deep learning network
         image = cv2.resize(frame, (50,50))
         image = np.float32(image/255)
         image = img_to_array(image)
@@ -221,7 +212,7 @@ def apicall():
 
         frame = cv2.imread(os.path.join(path, "mouth.jpg"))
         mouth_img = "mouth" + img_name
-        cv2.imwrite(os.path.join("C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/static", mouth_img), frame)
+        cv2.imwrite(os.path.join("./static", mouth_img), frame)
         frame = imutils.resize(frame, width=400)
         # prepare the image to be classified by our deep learning network
         image = cv2.resize(frame, (50,50))
@@ -236,7 +227,7 @@ def apicall():
         
         frame = cv2.imread(os.path.join(path, "undereye1.jpg"))
         left_undereye_img = "leftundereye" + img_name
-        cv2.imwrite(os.path.join("/Users/sherwinjoseph/Desktop/Project/FatiqueDetection/Code/final/static", left_undereye_img), frame)
+        cv2.imwrite(os.path.join("./static", left_undereye_img), frame)
         frame = imutils.resize(frame, width=400)
         # prepare the image to be classified by our deep learning network
         image = cv2.resize(frame, (50,50))
@@ -249,7 +240,7 @@ def apicall():
 
         frame = cv2.imread(os.path.join(path, "undereye2.jpg"))
         right_undereye_img = "rightundereye" + img_name
-        cv2.imwrite(os.path.join("C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/static", right_undereye_img), frame)
+        cv2.imwrite(os.path.join("./static", right_undereye_img), frame)
         frame = imutils.resize(frame, width=400)
         # prepare the image to be classified by our deep learning network
         image = cv2.resize(frame, (50,50))
@@ -262,9 +253,8 @@ def apicall():
 
         
         frame = cv2.imread(os.path.join(path, img_name))
-        #frame_jaw = cv2.imread(os.path.join(path, "jaw.jpg"))
         skin_img = "skin" + img_name
-        cv2.imwrite(os.path.join("C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/static", skin_img), frame)
+        cv2.imwrite(os.path.join("./static", skin_img), frame)
         frame = imutils.resize(frame, width=400)
         # prepare the image to be classified by our deep learning network
         image = cv2.resize(frame, (100,100))
@@ -281,7 +271,7 @@ def apicall():
         label = "{}: {:.5f}%".format(label, final_prediction * 100)
         frame_final = cv2.putText(frame1, label, (10, 25),
             cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-        cv2.imwrite(os.path.join("C:/Users/Samden/Desktop/Data Science/Projects/Engineers day/CNN/final/static", img_name), frame_final)
+        cv2.imwrite(os.path.join("./static", img_name), frame_final)
 
         os.remove(os.path.join(app.config['UPLOAD_FOLDER'], img_name))
 
@@ -297,6 +287,5 @@ def apicall():
 
 
 if __name__ == '__main__':
-    load_model1()
-    #app.run(host='192.168.43.30')
+    load_models()
     app.run(debug=True)	
