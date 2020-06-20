@@ -16,10 +16,12 @@ The architecture for this project is shown in the picture below. The image of a 
 
 # Setup Instructions
 
-First it is required to clone the entire repository into your local machine. There are two google drive links present inside model folder and the object detection folder. These two links need to be downloaded and placed into these folders respectively. After that you need to follow the steps listed below:
+<li>Clone the entire repository into your local machine.</li>
+<li>Download contents of object_detecion folder from zenodo and place it in the folder.</li>
+<li>Download models from zenodo and place it in models/image_classification.</li>
+
 
 <ol>
-  <li>Set up new Anaconda virtual environment:</li>
   <p> Setup a new environment and upgrade pip</p>
    
   ```
