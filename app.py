@@ -54,7 +54,6 @@ def apicall():
     if request.method == 'POST':
         path = './image'
 
-
         # Initialize dlib's face detector (HOG-based) and then create
         # The facial landmark predictor
         detector = dlib.get_frontal_face_detector()
