@@ -32,7 +32,7 @@ import json
 
 app = Flask(__name__)
 
-app.config['UPLOAD_FOLDER'] = './image'
+app.config['UPLOAD_FOLDER'] = './Image'
 MODEL_PATH = "./models/image_classification"
 
 def load_models():
@@ -52,7 +52,7 @@ def home():
 @app.route('/predict', methods = ['POST'])
 def apicall():
     if request.method == 'POST':
-        path = './image'
+        path = './Image'
 
         # Initialize dlib's face detector (HOG-based) and then create
         # The facial landmark predictor
