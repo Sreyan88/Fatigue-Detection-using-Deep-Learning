@@ -1,9 +1,6 @@
 # Fatigue_Detection using Deep Learning
 
 This repository contains a project based on the research to detect fatigue levels of a person through a photograph. For this project the main facial cues used to detect fatigue levels are: Undereyes, Eyes, Mouth, Nose and Skin.
-<p align="center">
-<img src="https://user-images.githubusercontent.com/33536225/84591184-04db6c00-ae5a-11ea-9005-411dcc9a9d2f.png" height="400" >
-</p>
 
 # Problem Statement
 The complexities of fatigue have drawn much attention from researchers across various disciplines. Short-term fatigue may cause safety issue while driving; thus, dynamic systems were designed to track driver fatigue. Longterm fatigue could lead to chronic syndromes, and eventually affect individuals physical and psychological health. Traditional methodologies of evaluating fatigue not only require sophisticated equipment but also consume enormous time.
@@ -72,6 +69,8 @@ Copy the url right after Running on and paste it in your browser.
 <img src="https://user-images.githubusercontent.com/33536225/84592167-3146b680-ae61-11ea-96fe-1d66b4b57595.png" height="400" >
 </p>
 
+## Note : The lower the score, the higher level of fatigue.
+
 Current aggregation used for final score:
   ```
 (((sum of left eye and right eye scores) / 2)*0.4) + (((sum of left under-eye and right under-eye scores)/2)*0.55) + (((sum of nose, face and mouth scores)/3)*0.05
@@ -84,9 +83,10 @@ This aggregation has been done through basic intuitive hypothesis. Please feel f
     <li><a href="https://www.linkedin.com/in/rohan-roney-a652a515a/">Rohan Roney</a></li>
     <li><a href="https://www.linkedin.com/in/samden-lepcha/">Samden Lepcha</a></li>
 </ol>
-<p align="center"> A picture of us at the award ceremony
-<img src="https://user-images.githubusercontent.com/33536225/84734659-1ee28f00-afbf-11ea-9d86-dc0cbcfe6f86.png" height="400" >
-</p>
+# Extras:
 
-<p> You can follow this follow <a href="https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10" >this</a> excellent tutorial to make train your own custom object detection model.</p>
+### Credits:
+<p> You can follow this<a href="https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10" >link</a> for an excellent tutorial to make train your own custom object detection model. Our under-eye object detection as heavily based on this.</p>
+<p> You can follow this<a href="https://www.pyimagesearch.com/2017/04/10/detect-eyes-nose-lips-jaw-dlib-opencv-python/" >link</a> from pyimagesearch for facial part extraction using dlib. Our facial part extraction is heavily based on this.</p>
+
 

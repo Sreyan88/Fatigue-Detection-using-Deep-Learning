@@ -89,7 +89,7 @@ def apicall():
                 if (name == "right_eye" or name == "left_eye" or name == "nose" or name == "mouth"):
                     cv2.imwrite(os.path.join(path , name + ".jpg"),roi)
 
-        # Custom model for under eye object detection trained using yolov3 (Darknet implementation)
+        # Custom model for under eye object detection trained using tensorflow implementation of faster-rcnn based on inception-v2
 
         PATH_TO_CKPT = "./final/object_detection/inference_graph/frozen_inference_graph.pb"
 
