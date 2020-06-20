@@ -1,4 +1,4 @@
-# Fatigue_Detection using Deep Learning
+# Fatigue Detection using Deep Learning
 
 This repository contains a project based on the research to detect fatigue levels of a person through a photograph. For this project the main facial cues used to detect fatigue levels are: Undereyes, Eyes, Mouth, Nose and Skin.
 
