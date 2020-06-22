@@ -47,7 +47,7 @@ def load_models():
 
 @app.route('/')
 def home():
-	return render_template('home_final.html')
+	return render_template('./templates/home_final.html')
 
 @app.route('/predict', methods = ['POST'])
 def apicall():
@@ -278,7 +278,7 @@ def apicall():
             + "Nose: " + str(nose) +"\n"+ "Mouth: " + str(mouth) +"\n"+ "Undereye Left: " + str(undereye1)
             +"\n"+ "Undereye Right: " + str(undereye2) +"\n"+ "Face: " + str(face) +"\n"+ "Final Prediction: " + str(final_prediction) )
 
-    return render_template('result_final.html', right_eyep=right_eye, left_eyep=left_eye, 
+    return render_template('./templates/result_final.html', right_eyep=right_eye, left_eyep=left_eye, 
         nosep=nose, mouthp=mouth, undereye1p=undereye1, undereye2p=undereye2, 
         facep=face, final=final_prediction, user_image = img_name, right_eye_imgp=right_eye_img,
         left_eye_imgp=left_eye_img, nose_imgp=nose_img, mouth_imgp=mouth_img, right_undereye_imgp=right_undereye_img,
