@@ -91,7 +91,7 @@ def apicall():
 
         # Custom model for under eye object detection trained using tensorflow implementation of faster-rcnn based on inception-v2
 
-        PATH_TO_CKPT = "./final/object_detection/inference_graph/frozen_inference_graph.pb"
+        PATH_TO_CKPT = "./object_detection/inference_graph/frozen_inference_graph.pb"
 
         # Path to label map file 
         PATH_TO_LABELS = "./object_detection/training/labelmap.pbtxt"

@@ -22,35 +22,39 @@ The architecture for this project is shown in the picture below. The image of a 
 </p>
 
 ### Setup Instructions
-
+<ol>
 <li>Clone the entire repository into your local machine.</li>
 <li>Download contents of <a href="https://zenodo.org/api/files/fc89114d-f49d-42b1-a277-2a2b08bf4ea9/object_detection_folder.zip">object_detection </a> folder from zenodo and place all the contents in the folder.</li>
 <li>Download the <a href="https://zenodo.org/api/files/fc89114d-f49d-42b1-a277-2a2b08bf4ea9/image_classification_models.zip"> models </a> from zenodo and place all the contents in models/image_classification.</li>
 
 
-<ol>
-  <p> Setup a new environment and upgrade pip</p>
+  <p> Open Anaconda Command Prompt and Setup a new environment</p>
    
   ```
-   conda create -n tensorflow1 pip python=3.6
-   python -m pip install --upgrade pip
+   C:\> conda create -n FatigueDetection pip python=3.6
   ```
 
-  <p>Install tensorflow-gpu in this environment using:</p>
+  <p>Activate the environment and upgrade pip </p>
   
   ```
-  pip install --ignore-installed --upgrade tensorflow-gpu
+  C:\> activate FatigueDetection
+  (FatigueDetection) C:\>python -m pip install --upgrade pip
   ```
   <p>All other requirements can be installed using requirements.txt</p>
   
   ```
-   pip install -r requirements.txt
+   (FatigueDetection) C:\>pip install -r requirements.txt
   ```
 
-<li> After all the package installation has been done run "app.py":
+<li> After all the package installations has been done navigate to the directory where the project has been downloaded and run "config.py":
   
   ```
-  python app.py
+  (FatigueDetection) C:\> python config.py
+  ```
+<li> After "config.py" has been run now you can run "app.py":
+  
+  ```
+  (FatigueDetection) C:\> python app.py
   ```
 <p align="center"> After running the above command you should get a screen that looks like this.
 
