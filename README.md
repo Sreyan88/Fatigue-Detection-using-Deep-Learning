@@ -99,7 +99,7 @@ This aggregation has been done through basic intuitive hypothesis. Please feel f
     <li><a href="https://www.linkedin.com/in/sreyan-ghosh/">Sreyan Ghosh</a></li>
     <li><a href="https://www.linkedin.com/in/sherwinjosephsunny/">Sherwin Joseph<a/></li>
     <li><a href="https://www.linkedin.com/in/rohan-roney-a652a515a/">Rohan Roney</a></li>
-    <li><a href="https://www.linkedin.com/in/samden-lepcha/">Samden Lepcha</a></li>
+    <li><a href="https://www.linkedin.com/in/samdenlepcha/">Samden Lepcha</a></li>
 </ol>
 
 # Extras:
