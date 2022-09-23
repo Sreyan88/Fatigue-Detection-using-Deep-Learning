@@ -39,7 +39,7 @@ opencv-python==4.2.0.34
 opt-einsum==3.2.1
 pandas==1.0.5
 Pillow==7.1.2
-protobuf==3.12.3
+protobuf==3.18.3
 pylint==2.5.2
 pyparsing==2.4.7
 pyserial==3.4
